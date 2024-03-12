@@ -18,7 +18,7 @@ function App() {
     <div>
       <div className="fixed h-[10.1vh] w-screen bg-[#222] flex">
         <div className='container flex mx-auto'>
-          <div className='box-border mt-[1vh] ml-[1vh] h-[8vh] w-[8vh] border-4 border-[#d1d1d1]'>
+          <div className='mt-[1vh] ml-[1vh] h-[8vh] w-[8vh] border-4 border-[#d1d1d1]'>
           <button className='w-full h-full flex items-center justify-center' onClick={() => click(-500)}><FaUser className='text-white text-6xl' /></button>
           </div>
           <div className='box-border mt-[1vh] ml-[3vh] h-[8vh] w-[8vh] flex justify-center items-center border-4 border-[#d1d1d1] text-white text-[3.2em]'>99</div>
