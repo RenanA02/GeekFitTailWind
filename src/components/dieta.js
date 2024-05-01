@@ -2,7 +2,7 @@
 const Dieta = () => {
   return (
     <div className="w-screen h-[80vh] overflow-auto mt-[10vh] flex items-center flex-col bg-fixed bg-[url('https://i.imgur.com/xTE7W0R.png')] bg-cover bg-no-repeat bg-center">
-    <div className="mt-1 h-[17vh] w-screen border-b-2 flex flex-col items-center">
+    <div className="mt-1 h-[30%] w-screen border-b-2 flex flex-col items-center">
       <h2 className='text-white text-[2em] mt-1'>DIETA</h2>
       <h1 className="text-white text-[5em] mt-1"> SEMANA 1</h1>
     </div>
