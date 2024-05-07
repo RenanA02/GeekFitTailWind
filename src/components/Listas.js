@@ -5,6 +5,10 @@ const Lista = (props) => {
         <label for={props.id} class="w-full  cursor-pointer font-medium text-white peer-checked:text-gray-400 peer-checked:line-through">
           {props.text}
            </label>
+
+        <td>
+        </td>
+
       </li>
   )
 

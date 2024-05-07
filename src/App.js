@@ -6,6 +6,10 @@ import Historico from './components/historico';
 import Dicas from './components/dicas';
 import Perfil from './components/perfil';
 import { FaUser } from "react-icons/fa";
+import Cadastro from './components/cadastro';
+import ListaTodos from './components/listaTodos'
+import Login from './components/login'
+
 
 function App() {
   const [ margin, setMargin ] = useState({marginLeft: 0});
@@ -27,13 +31,14 @@ function App() {
       </div>
 
       <div id="screen" style={{marginLeft: `${margin.marginLeft}vw`}} className={"w-[600vw] h-[90vh] flex transition-all " + margin}>
+
         <Dieta />
         <Exercicios />
         <Inicio click={()=> click(-100)} />
         <Historico />
         <Dicas />
         <Perfil />
-
+      
       </div>
 
       

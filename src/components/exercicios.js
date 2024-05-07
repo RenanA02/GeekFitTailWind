@@ -26,6 +26,7 @@ const Exercicios = () => {
 
         <button className="border-[3px] mb-3 h-[8%] min-h-[8%] w-[90%] lg:w-[70%] mt-4 rounded-2xl text-white text-[2rem] md:text-[2rem] text-center"> Finalizar treino </button>
 
+
       </div>
   )
 }
