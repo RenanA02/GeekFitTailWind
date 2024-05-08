@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Perfil = () => {
+export const Perfil = () => {
     return (
       <div className="w-screen overflow-auto mt-[10vh] flex flex-col justify-center items-center bg-fixed bg-[url('https://i.imgur.com/c4MQ1MX.png')] bg-cover bg-no-repeat bg-center">
        <h1 className='text-white text-5xl mt-[-20vh]'>Bem-vindo!</h1>
@@ -9,5 +9,5 @@ const Perfil = () => {
     )
 }
 
-export default Perfil
+
 

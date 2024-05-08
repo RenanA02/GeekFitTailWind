@@ -1,21 +1,24 @@
 import { useState } from 'react';
-import Exercicios from './components/exercicios';
-import Dieta from './components/dieta';
-import Inicio from './components/inicio';
-import Historico from './components/historico';
-import Dicas from './components/dicas';
-import Perfil from './components/perfil';
 import { FaUser } from "react-icons/fa";
-import Cadastro from './components/cadastro';
-import ListaTodos from './components/listaTodos'
-import Login from './components/login'
+import { Dieta } from './components/dieta';
+import { Perfil } from './components/perfil';
+import { Inicio } from './components/inicio';
+import { Exercicios } from './components/exercicios';
+import { Historico } from './components/historico';
+import { Dicas } from './components/dicas';
+
 
 
 function App() {
   const [ margin, setMargin ] = useState({marginLeft: 0});
+  const [dia, setDia] = useState(4)
 
   const click = (value) => {
     setMargin({ marginLeft: value});
+  }
+
+  const passaDia = () => {
+    setDia(dia+=1)
   }
 
   return (
@@ -32,13 +35,23 @@ function App() {
 
       <div id="screen" style={{marginLeft: `${margin.marginLeft}vw`}} className={"w-[600vw] h-[90vh] flex transition-all " + margin}>
 
+
+    <Dieta />
+    <Exercicios passar={()=> passaDia()}/>
+    <Inicio click={()=> click(-100)}> {dia} </Inicio>
+    <Historico>{dia}</Historico>
+    <Dicas />
+    <Perfil />
+
+    
+{/*
         <Dieta />
         <Exercicios />
         <Inicio click={()=> click(-100)} />
         <Historico />
         <Dicas />
         <Perfil />
-      
+      */}
       </div>
 
       

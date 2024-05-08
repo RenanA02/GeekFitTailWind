@@ -1,4 +1,4 @@
-const Dicas = () => {
+export const Dicas = () => {
   return(
   <div className="w-screen h-[80vh] overflow-auto mt-[10vh] flex flex-col items-center bg-fixed bg-[url('https://i.imgur.com/duC0hQ1.png')] bg-cover bg-no-repeat bg-center">
     <img className="h-[20vh]" src="https://i.imgur.com/UzZM1w2.png" alt="strength"></img>
@@ -20,4 +20,3 @@ const Dicas = () => {
   )
 }
 
-export default Dicas;

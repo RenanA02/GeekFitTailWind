@@ -8,7 +8,7 @@ const ListaUsuarios = (props) => {
     const pedidoPost = async () => {
         try {
             const response = await axios.get(baseUrl);
-            setData(response.data);
+            setData(response.data)
         } catch (error) {
             console.log(error);
         }
@@ -18,8 +18,11 @@ const ListaUsuarios = (props) => {
         pedidoPost();
     }, []);
 
+
+
+
     const tipo = props.tipo
-    const filteredData = data.filter((user) => user.tipo === tipo);
+    const filteredData = data.filter((user) => user.tipo == tipo);
 
     return (
         <div className="bg-fixed bg-cover bg-no-repeat bg-center">

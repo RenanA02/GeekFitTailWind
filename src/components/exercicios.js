@@ -4,7 +4,7 @@ import ListaUsuarios from "./listaTodos";
 import { useState } from "react";
 
 
-const Exercicios = () => {
+export const Exercicios = ({props, passarDia}) => {
   const [estilosExbox, setEstilosExbox] = useState({
     inferiores: "from-80% to-40%",
     superiores: "from-20% to-20%",
@@ -20,6 +20,7 @@ const Exercicios = () => {
 
 
 const handleFinalizar = () => {
+  passarDia();
   setEstilosExbox({
     inferiores: "from-90% to-90%",
     superiores: "from-70% to-70%",
@@ -60,5 +61,3 @@ const handleFinalizar = () => {
       </div>
   )
 }
-
-export default Exercicios;

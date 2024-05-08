@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const baseUrl = "https://localhost:44354/api/user/";
@@ -19,12 +19,15 @@ const Login = () => {
         });
     };
 
+    const navigate = useNavigate();
+
     const handleSubmit = async e => {
         e.preventDefault();
         try {
             const response = await axios.get(`${baseUrl}${user.email}/${user.password}`);
             if (response.data) {
                 setMensagem('Login bem-sucedido!');
+                navigate('/');
                 // Redirecionar para a página de perfil ou realizar outras ações necessárias após o login
             } else {
                 setMensagem('Email ou senha incorretos.');
@@ -49,7 +52,7 @@ const Login = () => {
                         <label htmlFor="senha" className="block text-gray-700 text-sm font-bold mb-2">Senha</label>
                         <input type="password" id="senha" name='password' onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
                     </div>
-                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><Link to={'/'}>Login</Link></button>
+                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
                     <div>Ainda não tem uma conta?</div>
                     <button className='text-blue-950 underline'><Link to={'/cadastro'}>Cadastre-se</Link></button>
                 </form>

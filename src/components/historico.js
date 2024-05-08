@@ -1,7 +1,7 @@
 import { FaThumbsUp } from "react-icons/fa";
 import HistBox from "./HistBox";
 
-const Historico = () => {
+export const Historico = (props) => {
   return(
   <div className="w-screen h-[80vh] overflow-auto mt-[10vh] flex flex-col items-center bg-fixed bg-[url('https://i.imgur.com/qEaWR5w.png')] bg-cover bg-no-repeat bg-center">
 
@@ -9,7 +9,7 @@ const Historico = () => {
       <FaThumbsUp className="text-white text-8xl self-center w-2/5" />
       <div className="w-3/5 h-full flex flex-col items-center">
         <h1 className="text-white font-semibold text-3xl mt-2">Sequência</h1>
-        <div className="border-2 border-white w-5/12 h-10 mt-3 rounded-full flex justify-center items-center text-2xl text-white"> 4 </div>
+        <div className="border-2 border-white w-5/12 h-10 mt-3 rounded-full flex justify-center items-center text-2xl text-white"> {props.children} </div>
         <h1 className="text-white text-3xl mt-2">Dias</h1>
       </div>
     </div>
@@ -57,5 +57,3 @@ const Historico = () => {
   </div>
   )
 }
-
-export default Historico;
