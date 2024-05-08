@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Cadastro = () => {
     const baseUrl = "https://localhost:44354/api/user/";
@@ -32,7 +33,7 @@ const Cadastro = () => {
     };
 
     return (
-        <div className="w-screen h-[80vh] overflow-auto mt-[10vh] flex justify-center bg-fixed bg-[url('https://i.imgur.com/c4MQ1MX.png')] bg-cover bg-no-repeat bg-center">
+        <div className="w-screen h-screen overflow-auto flex flex-col justify-center items-center bg-fixed bg-gray-400 bg-cover bg-no-repeat bg-center">
             <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h1 className='text-black text-lg mb-4'>Cadastro</h1>
                 {mensagem && <p className="text-black mb-4">{mensagem}</p>}
@@ -50,6 +51,8 @@ const Cadastro = () => {
                         <input type="password" id="senha" name='password' onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
                     </div>
                     <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Cadastrar</button>
+                    <div>Já tem uma conta?</div>
+                    <button className='text-blue-950 underline'><Link to={'/login'}>Login</Link></button>
                 </form>
             </div>
         </div>
