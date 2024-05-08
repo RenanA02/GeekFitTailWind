@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ListaUsuarios = () => {
+const ListaUsuarios = (props) => {
     const baseUrl = "https://localhost:44354/api/tarefa/";
     const [data, setData] = useState([]);
 
@@ -18,14 +18,20 @@ const ListaUsuarios = () => {
         pedidoPost();
     }, []);
 
+    const tipo = props.tipo
+    const filteredData = data.filter((user) => user.tipo === tipo);
+
     return (
-        <div className="w-screen h-screen flex justify-center items-center bg-fixed bg-[url('https://i.imgur.com/c4MQ1MX.png')] bg-cover bg-no-repeat bg-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h1 className='text-black text-5xl'>Lista de Usuários</h1>
+        <div className="bg-fixed bg-cover bg-no-repeat bg-center">
+            <div>
                 <ul className="mt-4">
-                    {data.map((user) => (
-                        <li key={user.id} className="text-gray-700 text-base mb-2">
-                            {user.name} - {user.descricao}
+                    {filteredData.map((user) => (
+                            <li key={user.id} class="text-base relative 
+                            flex w-[95%] gap-2.5 border-b-2 px-3 py-3.5 hover:border-gray-400">
+                                <input type="checkbox" id={user.id} class="peer relative h-5 w-5 shrink-0 appearance-none" />
+                                <label for={user.id} class="w-full  cursor-pointer font-medium text-white peer-checked:text-green-800 peer-checked:line-through">
+                                  {user.name} - {user.descricao}
+                                   </label>    
                         </li>
                     ))}
                 </ul>

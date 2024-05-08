@@ -15,10 +15,6 @@ const Historico = () => {
     </div>
 
     <HistBox>4</HistBox>
-    <HistBox>3</HistBox>
-    <HistBox>2</HistBox>
-    <HistBox>1</HistBox>
-
 
     <div className="h-[20vh] min-h-[20vh] w-[90%] border-2 border-white rounded-3xl mt-4 flex bg-zinc-900/50">
       <div className="w-2/5 h-full flex items-center justify-center">
